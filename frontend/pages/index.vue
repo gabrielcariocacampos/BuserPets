@@ -4,7 +4,7 @@
       não importa a raça, pois todos os animais tem a sua graça!!! 
        A ideia aqui é simples, você precisa viajar por alguns dias ou semanas e não sabe com quem deixar seu melhor amigo, seja ele:
        um cachorro, gato ou passarinho ??
-       Nós iremos solucionar o seu problema trazendo interação entre os amigos e melhores amigos, desta Empresa incrível, que é exemplo de Empatia 
+       Nós iremos solucionar o seu problema trazendo interação entre os amigos e melhores amigos, desta Empresa incrível, que é exemplo de empatia 
        e companheirismo entre seus colaboradores.
        Agora é só se programar para viajar e cadastrar seu PET com algum tempo de antecedência... Encontre novos amigos que sejam a sua cara e Divirta-se!</label>
    <div>
