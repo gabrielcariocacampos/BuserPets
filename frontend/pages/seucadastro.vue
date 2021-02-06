@@ -14,6 +14,9 @@
         label="Casa ou AP"
       ></v-text-field>
       <v-text-field
+        label="Possui filhos?"
+      ></v-text-field>
+      <v-text-field
          label="Disponibilidade de Horas"
       ></v-text-field>
       <v-text-field

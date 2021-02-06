@@ -29,3 +29,21 @@ class Todo(models.Model):
             'description': self.description,
             'done': self.done,
         }
+
+class Animais(models.Model):
+    nomeanimal=models.CharField(max_length=32, null = False, blank = False)
+    raça=models.CharField(max_length=32, null = False, blank = False)
+    costumes=models.CharField(max_length=122, null = False, blank = False)
+    alimentação=models.CharField(max_length=122, null = False, blank = False)
+    gosta=models.CharField(max_length=122, null = False, blank = False)
+    idade=models.IntegerField(null = False, blank = False)
+
+    def to_dict_json(self):
+        return {
+            'nomeanimal':self.nomeanimal,
+            'raça':self.raça,
+            'costumes':self.costumes,
+            'alimentação':self.alimentação,
+            'gosta':self.gosta,
+            'idade':self.idade,
+        }

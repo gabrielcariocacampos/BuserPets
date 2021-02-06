@@ -4,7 +4,7 @@ from django.http.response import HttpResponse, JsonResponse
 from django.contrib import auth
 from commons.django_model_utils import get_or_none
 from commons.django_views_utils import ajax_login_required
-from core.service import log_svc, todo_svc
+from core.service import log_svc, todo_svc, animais_svc
 from django.views.decorators.csrf import csrf_exempt
 
 
@@ -69,3 +69,13 @@ def _user2dict(user):
         }
     }
     return d
+
+def cadastroanimais(request):
+    nomeanimal=request.POST['nomeanimal'] 
+    raça=request.POST['raça']
+    costumes=request.POST['costumes']
+    alimentação=request.POST['alimentação']
+    gosta=request.POST['gosta']
+    idade=request.POST['idade']
+    animais = animais_svc.cadastroanimais(nomeanimal=nomeanimal, raça=raça, costumes=costumes, alimentação=alimentação, gosta=gosta, idade=idade)
+    return JsonResponse(animais, safe=False)
