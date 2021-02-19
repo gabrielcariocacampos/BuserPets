@@ -1,12 +1,12 @@
 <template>
-  <v-toolbar color="gray lighten-5" dark fixed app clipped-right>
+  <v-toolbar color="black" dark fixed app clipped-right>
     <v-toolbar-title><router-link :to="{ name: 'index' }"><img src="https://www.ubatuba.sp.gov.br/wp-content/uploads/sites/2/2017/04/0425-adocao-CCZ-ubatuba-logo-770x689.png" style="max-height: 72px"/></router-link></v-toolbar-title>
     <v-spacer></v-spacer>
     <v-btn v-if="!logged_user" flat dark ripple class="ma-0 ml-5"  @click="open_login_dialog($event)">Login</v-btn>
     <v-menu v-if="logged_user" offset-y>
       <v-btn icon slot="activator" class="ma-0 ml-5">
         <v-avatar size="360px">
-          <img src="https://graph.facebook.com/4/picture?width=300&height=300">
+          <img src="https://graph.facebook.com/4/picture?width=300&height=300" style="width:50px; height:50px;">
         </v-avatar>
       </v-btn>
       <v-card class="no-padding">

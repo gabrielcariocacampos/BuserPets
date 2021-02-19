@@ -1,16 +1,15 @@
 <template>
   <v-layout class="foto" align-center justify-center>
     <label class="texto"> Adoção é também doação: de carinho, respeito e atenção, experimentar a forma mais pura de amor e gratidão, 
-      não importa a raça, pois todos os animais tem a sua graça!!! 
+      não importa a raça, pois todos os an  imais tem a sua graça!!! 
        A ideia aqui é simples, você precisa viajar por alguns dias ou semanas e não sabe com quem deixar seu melhor amigo, seja ele:
-       um cachorro, gato ou passarinho ??
+       um cachorro, gato ou passarinho ?? 
        Nós iremos solucionar o seu problema trazendo interação entre os amigos e melhores amigos, desta Empresa incrível, que é exemplo de empatia 
        e companheirismo entre seus colaboradores.
        Agora é só se programar para viajar e cadastrar seu PET com algum tempo de antecedência... Encontre novos amigos que sejam a sua cara e Divirta-se!</label>
-   <div>
-     <v-btn><router-link :to="{name: 'cadastreseuanimal'}">Cadastre seu animalzinho!</router-link></v-btn>
-     <v-btn><router-link :to="{name: 'animaisparacuidar'}">Animais para cuidar!</router-link></v-btn>
-     <v-btn><router-link :to="{name: 'seucadastro'}">Registre-se para Adotar!</router-link></v-btn>
+    <div>
+     <v-btn x-larger color="black" dark><router-link :to="{name: 'cadastreseuanimal'}">Cadastre seu animalzinho!</router-link></v-btn>
+     <v-btn x-larger color="black" dark ><router-link :to="{name: 'animaisparacuidar'}">Animais para cuidar!</router-link></v-btn>
    </div>
    <div class="fotos">
     <v-img src="https://super.abril.com.br/wp-content/uploads/2017/10/gatos.png"></v-img>
@@ -31,15 +30,18 @@ export default {
 
 <style>
 .texto {
+  font-family: sans-serif;
   font-size: 22px;
-  margin: 25px;
+  font: serif;
+  margin:15px;
+ 
 }
 .fotos {
   display: flex;
-  width: 1100px;
+  justify-content: space-around;
+  width: 1300px;
   height: 400px;
   margin: 25px;
-
 }
 .foto {
   display: flex;

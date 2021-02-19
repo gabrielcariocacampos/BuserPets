@@ -1,109 +1,103 @@
 <template>
-  <v-layout align-center justify-center>
+ <v-layout align-center justify-center>
     <template>
-    <v-card class="mx-auto" max-width="344">
-        <v-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEPFz0cXBb8Mz_oueaexi_Uwko8c377BgLdw&usqp=CAU" height="320px"></v-img>
-
-        <v-card-title>Cachorro Tito</v-card-title>
-
-        <v-card-subtitle> 1 ano de idade, carinhoso e alegre</v-card-subtitle>
-
-        <v-expand-transition>
-          <div v-show="show">
-            <v-divider></v-divider>
-
-            <v-card-text>
-              I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
-            </v-card-text>
-          </div>
-        </v-expand-transition>
-    </v-card>
-    <v-card class="mx-auto" max-width="344">
-        <v-img src="https://www.petz.com.br/blog/wp-content/uploads/2020/07/calopsitas-felizes.jpg" height="320px"></v-img>
-
-        <v-card-title>Calopsita gabrielo</v-card-title>
-
-        <v-card-subtitle> 23 anos de idade, Falante</v-card-subtitle>
-
-        <v-expand-transition>
-          <div v-show="show">
-            <v-divider></v-divider>
-
-            <v-card-text>
-              I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
-            </v-card-text>
-          </div>
-        </v-expand-transition>
-    </v-card>
-    <v-card class="mx-auto" max-width="344">
-        <v-img src="https://www.atelierdospassaros.com.br/wp-content/uploads/2020/06/FralditasCalopsita_Superman2.jpeg" height="320px"></v-img>
-
-        <v-card-title>Super-MAn</v-card-title>
-
-        <v-card-subtitle> 13 anos de idade, é passaro ou um avião</v-card-subtitle>
-
-        <v-expand-transition>
-          <div v-show="show">
-            <v-divider></v-divider>
-
-            <v-card-text>
-              I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
-            </v-card-text>
-          </div>
-        </v-expand-transition>
-    </v-card>
-    <v-card class="mx-auto" max-width="344">
-        <v-img src="https://static.poder360.com.br/2020/10/gato-animal-covid-19-868x644.jpg" height="210px"></v-img>
-
-        <v-card-title> NINO</v-card-title>
-
-        <v-card-subtitle> 4 anos de idade, Sorriso Maroto</v-card-subtitle>
-
-        <v-expand-transition>
-          <div v-show="show">
-            <v-divider></v-divider>
-
-            <v-card-text>
-              I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
-            </v-card-text>
-          </div>
-        </v-expand-transition>
-    </v-card>
-    <v-card class="mx-auto" max-width="344">
-        <v-img src="https://blog.petiko.com.br/wp-content/uploads/2015/04/caes-desocnfiado-12-550x411.jpg" height="210px"></v-img>
-
-        <v-card-title> Van damme</v-card-title>
-
-        <v-card-subtitle> 8 anos de idade, Desconfiado e atrevido</v-card-subtitle>
-
-        <v-expand-transition>
-          <div v-show="show">
-            <v-divider></v-divider>
-
-            <v-card-text>
-              I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
-            </v-card-text>
-          </div>
-        </v-expand-transition>
-    </v-card>
+      <div class="modelo">
+        <v-flex v-for="(item, index) in items" :key="index"> 
+          <v-card class="mx-auto" max-width="344px">
+              <v-img :src="item.image" width="100%" height="auto"></v-img>
+              <v-card-title class="ad"> {{item.nomepessoal}}</v-card-title>  
+                <ul>
+                  <li><label for="texto">Nome:</label><v-text class="bd">{{item.nomeanimal}}</v-text></li>
+                  <li><label for="texto">Idade:</label><v-text class="bd">{{item.idade}}</v-text></li>
+                  <li><label for="texto">Raça:</label><v-text class="bd">{{item.raça}}</v-text></li>
+                  <li><label for="texto">Costumes:</label><v-text class="bd">{{item.costumes}}</v-text></li>
+                  <li><label for="texto">Alimentação:</label><v-text class="bd">{{item.alimentação}}</v-text></li>
+                  <li><label for="texto">Gosta de crianças ?</label><v-text class="bd">{{item.gosta}}</v-text></li>
+                </ul>
+              <v-divider :key="index"></v-divider>
+              <v-btn class="adotar" @click="Adotar(item)"
+                ><v-icon dark left>email</v-icon> Adotar </v-btn>
+          </v-card>
+        </v-flex>
+       </div>
     </template>
-
   </v-layout>
 </template>
 
 <script>
 
+import AppApi from '~apijs'
 import Pais from '~/components/Pais.vue'
 
 export default {
   data () {
-    return {}
+    return {
+      items:[],
+      resultado: '',
+      text: '',
+      nomepessoal: '',
+      nomeanimal: '',
+      idade: '',
+      raça: '',
+      costumes: '',
+      alimentação: '',
+      gosta: ''
+    }
+  },
+  created () {
+    AppApi.listaranimais().then(response => {this.items = response.data})
   },
   components: {
     Pais,
+  },
+  methods: {
+    Adotar(item){
+      this.text += `Olá! Desejamos que ambos desfrutem de uma agradável aventura... Voltem Sempre! \n`;
+      this.text += `Nome da pessoa: ${item.nomepessoal}\n`;
+      this.text += `Nome do animal: ${item.nomeanimal}\n`;
+      this.text += `Idade: ${item.idade}\n`;
+      this.text += `Raça: ${item.raça}\n`;
+      this.text += `Costume(s): ${item.costumes}\n`;
+      this.text += `Alimentação: ${item.alimentação} \n`;
+      this.text += `Gosta de crianças: ${item.gosta} \n`;
+      this.text += `Olá ${item.nomepessoal}, você confirma as informações acima sobre o seu PET ?! Quando posso busca-lo ?! `
+      this.apilink = "http://api";
+      this.apilink +=
+        ".whatsapp.com/send?phone=+55" +
+        item.telefone +
+        "&text=" +
+        encodeURI(this.text);
+      window.open(this.apilink);
+      }
+     },
   }
-}
+
 </script>
 
 <style>
+  .ad {
+    font-size: 32px;
+    color: black;
+    margin: 8px;
+    font: serif;
+  }
+  .bd {
+    font-size: 20px;
+    color: black;
+    margin: 4px;
+    font: serif;
+  }
+  .mx-auto {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 1.5rem;
+    box-shadow: 0px 2px 22px #26395338;
+  }
+  .modelo {
+    display: flex;
+    flex-flow: row wrap;
+    flex-grow: 1;
+  }
 </style>
+
+

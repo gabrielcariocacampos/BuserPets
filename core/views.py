@@ -70,12 +70,41 @@ def _user2dict(user):
     }
     return d
 
-def cadastroanimais(request):
+def cadastro(request):
+    nomepessoal=request.POST['nomepessoal']
+    telefone=request.POST['telefone']
     nomeanimal=request.POST['nomeanimal'] 
     raça=request.POST['raça']
     costumes=request.POST['costumes']
     alimentação=request.POST['alimentação']
     gosta=request.POST['gosta']
     idade=request.POST['idade']
-    animais = animais_svc.cadastroanimais(nomeanimal=nomeanimal, raça=raça, costumes=costumes, alimentação=alimentação, gosta=gosta, idade=idade)
+    image=request.FILES['image']
+    animais = animais_svc.cadastro(nomepessoal=nomepessoal, telefone=telefone, nomeanimal=nomeanimal, raça=raça, costumes=costumes, alimentação=alimentação, gosta=gosta, idade=idade, image=image)
     return JsonResponse(animais, safe=False)
+
+#def cadastropessoal(request):
+ #   request.user
+    # cidade=request.POST['cidade']
+    # endereço=request.POST['endereço']
+    # casa=request.POST['casa']
+    # filhos=request.POST['filhos']
+    # horas=request.POST['horas']
+    # idade1=request.POST['idade1']
+    # # username=request.POST['username']
+    # # password=request.POST['password']
+    # # email=request.POST['email']
+    # pessoas = pessoas_svc.cadastropessoal(nome=nome, cidade=cidade, endereço=endereço,
+    #                                       casa=casa, filhos=filhos, horas=horas,
+    #                                       idade1=idade1,
+    #                                       # username=username, password=password, email=email
+    #                                       user=request.user
+    #                                       )
+    # return JsonResponse(pessoas, safe=False)
+
+def listaranimais(request):
+    animais=list(animais_svc.listaranimais())
+    info=[]
+    for a in animais:
+        info.append(a.to_dict_json())
+    return JsonResponse(info, safe = False)

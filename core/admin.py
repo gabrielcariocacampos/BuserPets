@@ -10,8 +10,7 @@ class TodoAdmin(admin.ModelAdmin):
     list_display = ('description', 'done')
 
 class AnimaisAdmin(admin.ModelAdmin):
-    list_display = ('nomeanimal', 'raça', 'costumes', 'alimentação', 'gosta', 'idade')
-
+    list_display = ('nomepessoal','nomeanimal', 'raça', 'costumes', 'alimentação', 'gosta', 'idade', 'image')
 
 admin.site.register(ActivityLog, ActivityLogAdmin)
 admin.site.register(Todo, TodoAdmin)

@@ -82,7 +82,7 @@ DATABASES = {
         'USER': os.getenv('DJANGO_DB_USER', 'app'),
         'PASSWORD': os.getenv('DJANGO_DB_PASSWORD', 'app'),
         'HOST': os.getenv('DJANGO_DB_HOST', 'localhost'),
-        'PORT': os.getenv('DJANGO_DB_PORT', '5432'),
+        'PORT': os.getenv('DJANGO_DB_PORT', '5431'),
     }
 }
 
@@ -125,6 +125,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.getenv('DJANGO_STATIC_ROOT', os.path.join(BASE_DIR, 'static'))
+
+MEDIA_ROOT = os.getenv('DJANGO_MEDIA_ROOT', os.path.join(BASE_DIR, 'media'))
+MEDIA_URL = '/media/'
+
 
 LOGGING = {
     'version': 1,

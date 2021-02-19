@@ -19,8 +19,11 @@ const api = {
     list_todos(){
         return get('/api/list_todos');
     },
-    cadastroanimal(nomeanimal, raça, costumes, alimentação, gosta, idade){
-        return post('/api/cadastroanimal', {nomeanimal, raça, costumes, alimentação, gosta, idade})
+    cadastro(nomepessoal, telefone, nomeanimal, raça, costumes, alimentação, gosta, idade, image){
+        return post('/api/cadastro', {nomepessoal, telefone, nomeanimal, raça, costumes, alimentação, gosta, idade, image})
+    },
+    listaranimais(){
+        return get('/api/listaranimais')
     }
 }
 export default api;
